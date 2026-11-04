@@ -24,6 +24,17 @@ Supported formats:
 A folder whose name matches a built-in theme adds its tunes to that theme.
 Tune files you add stay on your SD card; they are not part of this repo.
 
+## Converting a MIDI file
+`scripts/midi_to_rtttl.py` turns a `.mid` file into an 8-bit RTTTL tune (melody only, one note at a time):
+
+```
+python scripts/midi_to_rtttl.py song.mid --list
+python scripts/midi_to_rtttl.py song.mid --track 1 --name "My Tune"
+```
+
+Options: `--track N` picks the melody track (default: the busiest one), `--transpose N`
+shifts by semitones, `--out file.rtttl` sets the output path. Copy the result into a theme folder.
+
 ## Build
 ```
 ufbt
